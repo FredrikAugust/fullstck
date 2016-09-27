@@ -7,3 +7,9 @@ deploy:
   app: el-homepage
   api_key:
     secure: O+KOd/XU2oDTA3S4o91UuzCg/qGFoP0Nd2mqz0j8PAkgQwA4qzqUmIQS9HO4AH5+pBjQNsq1/CgvVb57BnxZknl5DLDWNTzjWGG0kNYVXj3dF8Updaov7LBEft/3ivZG86b6qWLCdppveSd80dOEB8NKKS/2VljhwluCiAOpMXA1fZgnxZn2A/q2PQ1bS5vQ9zuOhYzgG42JTxauHMM+00nzRyFASoHaxvE1Zn9YiGB8J7eoDa5N+GUT9jb9Ewg9p7lbhn7qpNfGM4IIyMcVoGw93KEVhPkzrj0DiLDhraXboJzz34BfwiH3xamBJ9XhpvZnhX5EytLjvl4ekm3QkvxBJSNEl3Afpa1Ki6LPO4HyPgsJjU83ftuNsHP6MgI7fvrTgdgCIU+lvYU1Ur9qkHjc+jQysFBp8edd4aIMhdn+IjTh71JRCFkDYbtMiBNkdCtv+Ca8Ea/0Dy7cy16eYH38CvDE5bkAYZu0wW+ctjlXS4sh1z3CboEEb+bNGAB6mL6xB9bMN5KTRDsPaJsITT0nEtDiQJnG7POoPmgCiRKzFqo2ye4m1FCnCBLl+xu8xfYR34QKMJW0XhJaUe8sLhOdcodkZQeomBjBuKs4XfOo8svd32H6/dtz1NVuB4g/D0lNR/nKY3V7haaDuyaNfm8nGToMbbsdIiXhkx/fydE=
+services:
+  - postgresql
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database homepage_test;' -U postgres
+
