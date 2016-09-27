@@ -47,9 +47,14 @@ footer.page-footer {
   }
 }
 
-.navbar-fixed > nav {
+.trans-nav {
   background-color: rgba(0, 0, 0, 0);
   box-shadow: none;
+}
+
+.vis-nav {
+  background-color: #EF5350;
+  box-shadow: 0 2px 5px 0 #00000029, 0 2px 10px 0 #0000001f;
 }
 
 .sixty-percent-text {
