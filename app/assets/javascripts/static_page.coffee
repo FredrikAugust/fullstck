@@ -1,4 +1,4 @@
-$(document).ready ->
+$(document).on 'turbolinks:load', ->
   $('.parallax').parallax()
   $(".button-collapse").sideNav()
   $(window).on 'scroll', (e) ->
