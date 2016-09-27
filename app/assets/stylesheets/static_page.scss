@@ -51,3 +51,19 @@ footer.page-footer {
   background-color: rgba(0, 0, 0, 0);
   box-shadow: none;
 }
+
+.sixty-percent-text {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.brand-logo img {
+  height: 0.8em;
+}
+
+@media (max-width: 600px) {
+  .sixty-percent-text {
+    width: initial;
+  }
+}
