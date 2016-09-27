@@ -10,6 +10,9 @@ deploy:
 services:
   - postgresql
 before_script:
+  - mv config/database.yml config/database.yml.old
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database homepage_test;' -U postgres
+before_deploy:
+  - mv config/database.yml.old config/database.yml
 
