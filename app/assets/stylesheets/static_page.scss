@@ -1,3 +1,53 @@
-// Place all the styles related to the StaticPage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  height: 100%;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  display: flex;
+
+  h1 {
+    margin: 1.68rem 0;
+  }
+  .section {
+    flex: auto;
+    align-self: center;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+
+  .material-icons {
+    font-size: inherit;
+  }
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+@media (min-width: 660px) {
+  #big-p {
+    margin: 50px auto;
+  }
+}
+
+#index-banner {
+  height: 75%;
+
+  h1 {
+    color: white;
+  }
+}
+
+.navbar-fixed > nav {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
