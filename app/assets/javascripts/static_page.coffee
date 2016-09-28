@@ -1,7 +1,10 @@
 $(document).on 'turbolinks:load', ->
   $('.parallax').parallax()
-  $(".button-collapse").sideNav
+  $('.button-collapse').sideNav
     closeOnClick: true
+  $('.carousel.carousel-slider').carousel
+    full_width: true
+    indicators: true
   $(window).on 'scroll', (e) ->
     # when the top of the window is at the same place as the top of the second nav
     if $(window).scrollTop() >= $('#navsep').offset().top
