@@ -70,12 +70,6 @@ footer.page-footer {
   height: 0.8em;
 }
 
-@media (max-width: 600px) {
-  .sixty-percent-text {
-    width: initial;
-  }
-}
-
 .separator-nav {
   background-color: $hill-orange-dark;
 }
@@ -85,4 +79,19 @@ footer.page-footer {
   height: 190px;
   min-height: 190px;
   max-height: 190px;
+}
+
+.portfolio-top {
+  padding-top: 4rem;
+}
+
+// media queries
+
+@media (max-width: 600px) {
+  .sixty-percent-text {
+    width: initial;
+  }
+  .portfolio-top {
+    padding-top: 2rem;
+  }
 }
