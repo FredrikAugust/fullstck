@@ -28,6 +28,7 @@ $(document).on 'turbolinks:load', ->
     }, 500, 'swing'
 
 $(window).on 'load', ->
+  # TODO: check size of display first
   $('.carousel').height($('.carousel').height()*0.70)
   # options for scrollfire
   sf_options = [
