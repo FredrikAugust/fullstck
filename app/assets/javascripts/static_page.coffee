@@ -1,10 +1,12 @@
 $(document).on 'turbolinks:load', ->
   $('.parallax').parallax()
+  # enable the side navigation-menu on mobile
   $('.button-collapse').sideNav
     closeOnClick: true
   $('.carousel.carousel-slider').carousel
     full_width: true
     indicators: true
+    time_constant: 100
   $(window).on 'scroll', (e) ->
     # when the top of the window is at the same place as the top of the second nav
     if $(window).scrollTop() >= $('#navsep').offset().top
@@ -18,6 +20,7 @@ $(document).on 'turbolinks:load', ->
   $('a[href^="#"]').on 'click', (e) ->
     e.preventDefault()
 
+    # get href from the link clicked
     $target = $($(this).attr('href'))
 
     $('html, body').stop().animate {
@@ -26,4 +29,18 @@ $(document).on 'turbolinks:load', ->
 
 $(window).on 'load', ->
   $('.carousel').height($('.carousel').height()*0.70)
-
+  # options for scrollfire
+  sf_options = [
+    {
+      selector: '.carousel'
+      offset: $('.carousel').height()
+      callback: ->
+        Materialize.toast 'Swipe the image or use the arrow keys to see more',
+          5000, 'orange-bg'
+    }
+  ]
+  Materialize.scrollFire(sf_options)
+  $(window).on 'keydown', (e) ->
+    switch e.which
+      when 37 then $('.carousel').carousel('prev')
+      when 39 then $('.carousel').carousel('next')
