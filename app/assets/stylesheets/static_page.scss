@@ -85,6 +85,11 @@ footer.page-footer {
   position:fixed;
 }
 
+.carousel .card-panel {
+  padding: 5px;
+  background-color: $hill-orange-dark;
+}
+
 // media queries
 @media (max-width: 600px) {
   .sixty-percent-text {

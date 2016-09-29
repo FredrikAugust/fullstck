@@ -23,3 +23,7 @@ $(document).on 'turbolinks:load', ->
     $('html, body').stop().animate {
       'scrollTop': $target.offset().top - $('#navigation').height()
     }, 500, 'swing'
+
+$(window).on 'load', ->
+  $('.carousel').height($('.carousel').height()*0.70)
+
