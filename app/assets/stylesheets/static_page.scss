@@ -81,10 +81,23 @@ footer.page-footer {
   max-height: 190px;
 }
 
-// media queries
+.navbar-fixed {
+  position:fixed;
+}
 
+// media queries
 @media (max-width: 600px) {
   .sixty-percent-text {
     width: initial;
+  }
+  form button {
+    display: block !important;
+    margin: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  form {
+    margin-top: 2rem;
   }
 }
