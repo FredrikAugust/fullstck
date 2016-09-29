@@ -21,7 +21,7 @@ $(document).on 'turbolinks:load', ->
     $target = $($(this).attr('href'))
 
     $('html, body').stop().animate {
-      'scrollTop': $target.offset().top - $('#navigation').height()
+      'scrollTop': $target.offset().top - $('#navigation').height() + 1
     }, 500, 'swing'
 
 $(window).on 'load', ->
