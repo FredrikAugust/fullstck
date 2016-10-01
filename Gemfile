@@ -16,6 +16,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'dotenv-rails'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
