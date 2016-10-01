@@ -16,7 +16,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'dotenv-rails'
-  gem 'guard-rspec', require: false
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 group :development do
@@ -24,6 +25,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard-rspec', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
