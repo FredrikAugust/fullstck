@@ -4,8 +4,8 @@ class ContactMailer < ApplicationMailer
   def contact(email, message)
     @email   = email
     @message = message
-    mail(to: 'fullstck@fullstck.io',
-         subject: "New message from #{email}",
+    mail(to: 'contact@fullstck.io',
+         subject: 'New message from fullstck.io',
          from: email)
   end
 end

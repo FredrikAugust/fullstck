@@ -7,14 +7,14 @@ RSpec.describe ContactMailer, type: :mailer do
     let(:mail) { ContactMailer.contact email, message }
 
     it 'renders the subject' do
-      expect(mail.subject).to eql("New message from #{email}")
+      expect(mail.subject).to eql('New message from fullstck.io')
     end
 
     it 'renders the sender' do
       expect(mail.from).to eql([email])
     end
 
-    it 'includes the message in the body'do
+    it 'includes the message in the body' do
       expect(mail.body).to match(message)
     end
   end
