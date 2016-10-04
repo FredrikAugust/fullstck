@@ -1,3 +1,5 @@
+# Mainly controller for the rendering of the index page and sending the contact
+# email
 class StaticPageController < ApplicationController
   def index
   end
@@ -7,8 +9,8 @@ class StaticPageController < ApplicationController
     message = params[:message]
 
     if !email.nil? && !message.nil?
-      ContactMailer.send_response(email, message)
-      redirect_to(root_path, notice: 'Thanks you for contacting us.' +
+      ContactMailer.contact(email, message).deliver
+      redirect_to(root_path, notice: 'Thanks you for contacting us. ' \
                                      'We will respond shortly')
     end
   end

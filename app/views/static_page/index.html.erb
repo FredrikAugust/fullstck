@@ -106,16 +106,16 @@
   <div class="section" id="contact">
     <div class="row">
       <h2 class="light center">Contact</h2>
-      <form class="col s12" action="" method="">
+      <%= form_tag(controller: :static_page, action: :contact, method: 'post') %>
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
+            <input id="email" type="email" class="validate" name="email">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <textarea id="message" class="materialize-textarea"></textarea>
+            <textarea id="message" name="message" class="materialize-textarea"></textarea>
             <label for="message">Message</label>
           </div>
         </div>

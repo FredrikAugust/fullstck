@@ -20,7 +20,7 @@ Homepage	config/application.rb	/^module Homepage$/;"	m
 StaticPageController	app/controllers/static_page_controller.rb	/^class StaticPageController < ApplicationController$/;"	c
 StaticPageHelper	app/helpers/static_page_helper.rb	/^module StaticPageHelper$/;"	m
 contact	app/controllers/static_page_controller.rb	/^  def contact$/;"	f	class:StaticPageController
+contact	app/mailers/contact_mailer.rb	/^  def contact(email, message)$/;"	f	class:ContactMailer
 index	app/controllers/static_page_controller.rb	/^  def index$/;"	f	class:StaticPageController
-send_response	app/mailers/contact_mailer.rb	/^  def send_response(email, message)$/;"	f	class:ContactMailer
 system!	bin/setup	/^def system!(*args)$/;"	f
 system!	bin/update	/^def system!(*args)$/;"	f
