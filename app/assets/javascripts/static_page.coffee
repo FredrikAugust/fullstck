@@ -28,8 +28,8 @@ $(document).on 'turbolinks:load', ->
     }, 500, 'swing'
 
 $(window).on 'load', ->
-  # TODO: check size of display first
-  $('.carousel').height($('.carousel').height()*0.70)
+  large_viewport = $(window).width() > 992
+  $('.carousel').height($('.carousel').height()*0.90) if large_viewport
   # options for scrollfire
   sf_options = [
     {
