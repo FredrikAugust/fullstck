@@ -51,23 +51,6 @@ $(document).on 'turbolinks:load', ->
     else
       $('#submit').removeAttr 'disabled'
 
-  # set the initial width of the window
-  win_width = $(window).width()
-  # this is related to code at the top of this block (tl;dr chrome on android).
-  # This will however make sure that the window is resized if the width of the
-  # window is changed, so that it will make it look good if you e.g. flip your
-  # device into landscape mode, or go into the dev tools on chrome
-  $(window).on 'resize', ->
-    if $(window).width() != win_width
-      win_width = $(window).width()
-      $('#index-banner').height($(window).height() * 0.75)
-
-  screen.orientation.addEventListener 'change', ->
-    win_width = $(window).width()
-    $('#index-banner').height($(window).height() * 0.75)
-
-
-
 $(window).on 'load', ->
   large_viewport = $(window).width() > 992
 
