@@ -43,6 +43,7 @@ $(document).on 'turbolinks:load', ->
 
 $(window).on 'load', ->
   large_viewport = $(window).width() > 992
+
   $('.carousel').height($('.carousel').height()*0.90) if large_viewport
   # options for scrollfire
   sf_options = [
@@ -54,6 +55,7 @@ $(window).on 'load', ->
           5000, 'orange-bg'
     }
   ]
+
   Materialize.scrollFire(sf_options)
   $(window).on 'keydown', (e) ->
     switch e.which

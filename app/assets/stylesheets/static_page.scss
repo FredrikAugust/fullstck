@@ -5,6 +5,10 @@ body, html {
   height: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 p {
   line-height: 2rem;
 }
@@ -100,6 +104,10 @@ footer.page-footer {
   background-color: $hill-orange-dark;
 }
 
+.side-nav>li>a {
+color: white;
+}
+
 // media queries
 @media (max-width: 600px) {
   .sixty-percent-text {
@@ -114,5 +122,15 @@ footer.page-footer {
 @media (min-width: 992px) {
   form {
     margin-top: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .indicators {
+    display: none;
+  }
+
+  .with-indicators {
+    bottom: 20px !important;
   }
 }
