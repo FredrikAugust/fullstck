@@ -1,15 +1,20 @@
 require 'rails_helper'
 
 RSpec.feature 'Contact', type: :feature, js: true do
-  before { ActionMailer::Base.deliveries = [] }
-
-  scenario 'user tries to contact us' do
+  # simple method to send an email with specified values
+  def send_test_email(email='example@example.com', message='This is a test!')
     visit root_path
 
-    fill_in 'email', with: 'example@example.com'
-    fill_in 'message', with: 'This is a test!'
+    fill_in 'email', with: email
+    fill_in 'message', with: message
 
     click_button 'Submit'
+  end
+
+  before { ActionMailer::Base.deliveries = [] }
+
+  scenario 'user can send mail if correctly filled out' do
+    send_test_email
 
     expect(ActionMailer::Base.deliveries.count).to eql 1
     expect(ActionMailer::Base.deliveries.first.from).to eql\
@@ -17,25 +22,29 @@ RSpec.feature 'Contact', type: :feature, js: true do
     expect(ActionMailer::Base.deliveries.first.body).to match(/This is a test!/)
   end
 
+  scenario 'toast is shown after successful contact' do
+    send_test_email
+
+    expect(page).to have_css '.toast'
+  end
+
   scenario 'user tries to contact us but forgets email' do
-    visit root_path
-
-    fill_in 'message', with: 'Oh snap! Looks like forgot the email'
-
     # cheeky-breeky way to check that the submit button is disabled
-    expect { click_button 'Submit' }.to raise_error Capybara::ElementNotFound
+    expect do
+      send_test_email(email: '')
+    end.to raise_error Capybara::ElementNotFound
+
     # double-check that the button is disabled
     expect(page).to have_css('#submit[disabled]')
     expect(ActionMailer::Base.deliveries.count).to eql 0
   end
 
   scenario 'user tries to contact us but forgets message' do
-    visit root_path
-
-    fill_in 'email', with: 'example@example.com'
-
     # cheeky-breeky way to check that the submit button is disabled
-    expect { click_button 'Submit' }.to raise_error Capybara::ElementNotFound
+    expect do
+      send_test_email(message: '')
+    end.to raise_error Capybara::ElementNotFound
+
     # double-check that the button is disabled
     expect(page).to have_css('#submit[disabled]')
     expect(ActionMailer::Base.deliveries.count).to eql 0
