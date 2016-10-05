@@ -57,10 +57,16 @@ $(document).on 'turbolinks:load', ->
   # This will however make sure that the window is resized if the width of the
   # window is changed, so that it will make it look good if you e.g. flip your
   # device into landscape mode, or go into the dev tools on chrome
-  $(window).on 'resize', (e) ->
+  $(window).on 'resize', ->
     if $(window).width() != win_width
       win_width = $(window).width()
-      $('#index-banner').height($(window).height() / 4 * 3) # 75% height
+      $('#index-banner').height($(window).height() * 0.75)
+
+  screen.orientation.addEventListener 'change', ->
+    win_width = $(window).width()
+    $('#index-banner').height($(window).height() * 0.75)
+
+
 
 $(window).on 'load', ->
   large_viewport = $(window).width() > 992
