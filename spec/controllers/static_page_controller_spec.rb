@@ -24,6 +24,33 @@ RSpec.describe StaticPageController, type: :controller do
         match(/This is a test!/)
     end
 
+    it 'sends a flash back on success' do
+      post :contact, params: {
+        email: 'example@example.com',
+        message: 'This is a test!'
+      }
+
+      expect(flash[:notice]).to be_present
+    end
+
+    it 'redirects user on successful submission' do
+      post :contact, params: {
+        email: 'example@example.com',
+        message: 'This is a test!'
+      }
+
+      expect(response).to redirect_to root_path
+    end
+
+    it "doesn't redirect on unsuccessful submission" do
+      post :contact, params: {
+        email: '',
+        message: ''
+      }
+
+      expect(response).to_not redirect_to root_path
+    end
+
     it "doesn't send an email if the user sends in no email" do
       post :contact, params: {
         email: '',
