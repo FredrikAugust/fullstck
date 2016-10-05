@@ -15,7 +15,6 @@ ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < A
 Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
 Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
 ContactMailer	app/mailers/contact_mailer.rb	/^class ContactMailer < ApplicationMailer$/;"	c
-ContactMailerPreview	spec/mailers/previews/contact_mailer_preview.rb	/^class ContactMailerPreview < ActionMailer::Preview$/;"	c
 Homepage	config/application.rb	/^module Homepage$/;"	m
 StaticPageController	app/controllers/static_page_controller.rb	/^class StaticPageController < ApplicationController$/;"	c
 StaticPageHelper	app/helpers/static_page_helper.rb	/^module StaticPageHelper$/;"	m

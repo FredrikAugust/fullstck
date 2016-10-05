@@ -27,6 +27,20 @@ $(document).on 'turbolinks:load', ->
       'scrollTop': $target.offset().top - $('#navigation').height() + 1
     }, 500, 'swing'
 
+  # form validation
+  # first we want to make the form invalid, this makes it possible for people
+  # who don't have js enabled to use the form
+  $('#submit').attr('disabled', 'true')
+  $('input,textarea').on 'input', (e) ->
+    # get value of email and message inputs
+    email = $('#email').val()
+    message = $('#message').val()
+    email_re = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+    if (!email_re.test(email) || message == '')
+      $('#submit').attr('disabled', 'true')
+    else
+      $('#submit').removeAttr 'disabled'
+
 $(window).on 'load', ->
   large_viewport = $(window).width() > 992
   $('.carousel').height($('.carousel').height()*0.90) if large_viewport

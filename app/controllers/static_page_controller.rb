@@ -8,7 +8,7 @@ class StaticPageController < ApplicationController
     email = params[:email]
     message = params[:message]
 
-    if !email.nil? && !message.nil?
+    if !email.empty? && !message.empty?
       ContactMailer.contact(email, message).deliver
       redirect_to(root_path, notice: 'Thanks you for contacting us. ' \
                                      'We will respond shortly')
