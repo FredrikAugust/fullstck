@@ -28,6 +28,14 @@ RSpec.feature 'Contact', type: :feature, js: true do
     expect(page).to have_css '.toast'
   end
 
+  scenario 'toast is not shown after unsuccessful contact' do
+    expect do
+      send_test_email email: ''
+    end.to raise_error Capybara::ElementNotFound
+
+    expect(page).to_not have_css '.toast'
+  end
+
   scenario 'user tries to contact us but forgets email' do
     # cheeky-breeky way to check that the submit button is disabled
     expect do
