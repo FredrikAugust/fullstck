@@ -57,7 +57,7 @@ $(window).on 'load', ->
       offset: $('.carousel').height()
       callback: ->
         Materialize.toast 'Swipe the image or use the arrow keys to see more',
-          5000, 'orange-bg'
+          5000
     }
   ]
 

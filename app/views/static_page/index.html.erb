@@ -1,9 +1,9 @@
 <%# show flash from when the user submitted an email %>
 <script>
-  <%# show a toast from the front-end lib for 5 seconds %>
-  <% if flash[:notice] %>
-    Materialize.toast("<%= flash[:notice] %>", 5000);
-  <% end %>
+<%# show a toast from the front-end lib for 5 seconds %>
+<% if flash[:notice] %>
+  Materialize.toast("<%= flash[:notice] %>", 5000);
+<% end %>
 </script>
 
 <%# mobile navigation menu %>
@@ -37,7 +37,7 @@
   <%# text in middle of jumbotron %>
   <div class="section no-pad-bot no-pad-top">
     <div class="container">
-      <h1 class="header center">bacon sandwich fiesta</h1>
+      <h1 class="header center">form & functionality</h1>
     </div>
   </div>
 
@@ -57,31 +57,41 @@
   <div class="section center" id="aboutus">
     <div class="row">
       <div class="col s12">
-        <h2 class='light'>About us</h2>
+        <h2 class='light'>Who are we?</h2>
         <p class="flow-text sixty-percent-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        Some choose form over functionality, we choose both. By putting equal
+        weight on design and development, we achieve functional websites with a
+        design tailored to your needs.
         </p>
       </div>
       <div class="col s12 m4">
         <img src="https://placekitten.com/g/150/150" alt="" class='responsive-img circle'>
-        <h4>Lorem</h4>
+        <h4>Development</h4>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Freedom is a great priority of ours, and to achieve that we use solely
+        open-source frameworks and programs during development. Combined with
+        the pinnacle of new technology, we deliver very fast and responsive
+        websites, and are able to suit all the clients demands.
         </p>
       </div>
       <div class="col s12 m4">
         <img src="https://placekitten.com/g/150/150" alt="" class='responsive-img circle'>
-        <h4>Lorem</h4>
+        <h4>Collaboration</h4>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        We aim to have complete transparency with our clients as we work
+        with them. You will have full access to our work through sites like
+        <a href='https://github.com'>GitHub</a>, and if you are dissatisfied
+        with anything, we will alter our work to suit your demands.
         </p>
       </div>
       <div class="col s12 m4">
         <img src="https://placekitten.com/g/150/150" alt="" class='responsive-img circle'>
-        <h4>Lorem</h4>
+        <h4>Design</h4>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Our design also has a lot of focus on simplicity. By using flat/material
+        design, and creating everything in vector graphics, our design can be
+        rescaled to any size with no loss in quality. We also have the ability
+        to create assets and/or take photos for your project.
         </p>
       </div>
     </div>
@@ -114,47 +124,44 @@
 
 <div class="container">
   <div class="section" id="contact">
+    <h2 class="light center">Contact</h2>
+    <p class='light'>
+    If you found our content appealing, and would like a website of your own,
+    contact us using the form below and we'll be in touch shortly. If you are
+    wondering about pricing we can provide you with an estimate if you specify
+    the general outline of your project below.
+    </p>
+    <%= form_tag(controller: :static_page, action: :contact, method: 'post') %>
     <div class="row">
-      <h2 class="light center">Contact</h2>
-      <%= form_tag(controller: :static_page, action: :contact, method: 'post') %>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate" name="email">
-            <label for="email">Email</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="message" name="message" class="materialize-textarea"></textarea>
-            <label for="message">Message</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <button id='submit' class="btn btn-large waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-            </button>
-          </div>
-        </div>
-      </form>
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate" name="email">
+        <label for="email">Email</label>
+      </div>
     </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="message" name="message" class="materialize-textarea"></textarea>
+        <label for="message">Message</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <button id='submit' class="btn btn-large waves-effect waves-light" type="submit" name="action">Send</button>
+      </div>
+    </div>
+    </form>
   </div>
 </div>
 
 <footer class="page-footer">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Word from the creators</h5>
-        <p class="grey-text text-lighten-4">
-        Consectetur temporibus cupiditate repellendus dicta itaque? Maxime porro fugit libero sunt nisi fugit. Atque excepturi explicabo incidunt explicabo veniam vitae.
-        </p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
+      <div class="col s12">
+        <h5 class="white-text">Contact</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="https://github.com/fullstck">GitHub</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://github.com/fullstck/homepage">Source</a></li>
+          <li class='grey-text text-lighten-3'><i class='material-icons tiny'>email</i> contact@fullstck.io</li>
+          <li class='grey-text text-lighten-3'><i class='material-icons tiny'>contact_phone</i> +47 928 48 870</li>
+          <li class='grey-text text-lighten-3'><i class='material-icons tiny'>location_on</i> Vestre Elvebakke 3, 0182 Oslo</li>
         </ul>
       </div>
     </div>

@@ -52,7 +52,7 @@ footer.page-footer {
 }
 
 #index-banner {
-  height: 75%;
+  height: 100%;
 
   h1 {
     color: white;
@@ -105,6 +105,10 @@ footer.page-footer {
 
 .side-nav>li>a {
 color: white;
+}
+
+footer li * {
+  vertical-align:middle;
 }
 
 // media queries
