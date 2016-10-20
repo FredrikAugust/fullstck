@@ -8,7 +8,7 @@ RSpec.feature 'Contact', type: :feature, js: true do
     fill_in 'email', with: email
     fill_in 'message', with: message
 
-    click_button 'Submit'
+    click_button 'Send'
   end
 
   before { ActionMailer::Base.deliveries = [] }
