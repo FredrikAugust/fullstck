@@ -1,7 +1,9 @@
 <%# show flash from when the user submitted an email %>
 <script>
   <%# show a toast from the front-end lib for 5 seconds %>
-  Materialize.toast("<%= flash[:notice] %>", 5000);
+  <% if flash[:notice] %>
+    Materialize.toast("<%= flash[:notice] %>", 5000);
+  <% end %>
 </script>
 
 <%# mobile navigation menu %>

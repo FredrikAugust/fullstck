@@ -1,9 +1,4 @@
 $(document).on 'turbolinks:load', ->
-  # because of the navigation controls on chrome on android it will look laggy
-  # when you scroll down the page from the top, this fixes that by setting the
-  # height of the jumbotron to a static height
-  $('#index-banner').height $('#index-banner').height()
-
   $('.parallax').parallax()
 
   # enable the side navigation-menu on mobile

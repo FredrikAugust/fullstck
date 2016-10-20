@@ -116,6 +116,14 @@ color: white;
     display: block !important;
     margin: auto;
   }
+  .parallax {
+    display: none;
+  }
+  #index-banner {
+    background-image: url('https://i.imgur.com/ggUDihR.gif');
+    background-position: center center;
+    background-attachment: fixed;
+  }
 }
 
 @media (min-width: 992px) {
