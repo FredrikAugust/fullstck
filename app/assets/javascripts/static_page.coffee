@@ -1,14 +1,26 @@
 $(document).on 'turbolinks:load', ->
+  $('.slick').slick({
+    dots: false,
+    fade: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.slick-nav'
+  })
+
+  $('.slick-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.slick',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true
+  })
+
   $('.parallax').parallax()
 
   # enable the side navigation-menu on mobile
   $('.button-collapse').sideNav
     closeOnClick: true
-
-  $('.carousel.carousel-slider').carousel
-    full_width: true
-    indicators: true
-    time_constant: 100
 
   $(window).on 'scroll', (e) ->
     # when the top of the window is at the same place as the top of the second nav
@@ -45,24 +57,3 @@ $(document).on 'turbolinks:load', ->
       $('#submit').attr('disabled', 'true')
     else
       $('#submit').removeAttr 'disabled'
-
-$(window).on 'load', ->
-  large_viewport = $(window).width() > 992
-
-  $('.carousel').height($('.carousel').height()*0.90) if large_viewport
-  # options for scrollfire
-  sf_options = [
-    {
-      selector: '.carousel'
-      offset: $('.carousel').height()
-      callback: ->
-        Materialize.toast 'Swipe the image or use the arrow keys to see more',
-          5000
-    }
-  ]
-
-  Materialize.scrollFire(sf_options)
-  $(window).on 'keydown', (e) ->
-    switch e.which
-      when 37 then $('.carousel').carousel('prev')
-      when 39 then $('.carousel').carousel('next')
