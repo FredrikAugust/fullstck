@@ -10,7 +10,7 @@ class StaticPageController < ApplicationController
 
     if !email.empty? && !message.empty?
       ContactMailer.contact(email, message).deliver
-      redirect_to(root_path, notice: 'Thanks you for contacting us. ' \
+      redirect_to(root_path, notice: 'Thank you for contacting us. ' \
                                      'We will respond shortly')
     end
   end
