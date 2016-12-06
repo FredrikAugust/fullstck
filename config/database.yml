@@ -6,15 +6,15 @@ default: &default
 development:
   <<: *default
   database: homepage_development
-  username: pguser
-  password: password1
+  username: postgres
+  password: postgres
   host: localhost
 
 test:
   <<: *default
   database: homepage_test
-  username: pguser
-  password: password1
+  username: postgres
+  password: postgres
   host: localhost
 
 production:
