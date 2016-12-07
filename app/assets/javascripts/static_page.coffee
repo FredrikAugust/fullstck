@@ -1,5 +1,5 @@
 $(document).on 'turbolinks:load', ->
-  $('body').on 'scroll', (e) ->
+  $('.inner-body').on 'scroll', (e) ->
     # when the top of the window is at the same place as the top of the second nav
     if $('#navsep').offset().top <= 0
       # add original background-color and box-shadow
@@ -38,8 +38,10 @@ $(document).on 'turbolinks:load', ->
     # get href from the link clicked
     $target = $($(this).attr('href'))
 
-    $('html, body').stop().animate {
-      'scrollTop': $target.offset().top - $('#navigation').height() + 1
+    $('.inner-body').stop().animate {
+      'scrollTop': Math.abs($('#index-banner').offset().top) +
+        $target.position().top -
+        $('#navigation').height() + 1
     }, 500, 'swing'
 
   # form validation
