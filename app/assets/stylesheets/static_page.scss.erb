@@ -14,12 +14,6 @@ p {
   line-height: 2rem;
 }
 
-#index-banner {
-  line-height: 0;
-  height: auto;
-  display: flex;
-}
-
 h1 {
   margin: 1.68rem 0;
 }
@@ -54,10 +48,17 @@ footer.page-footer {
 }
 
 #index-banner {
+  line-height: 0;
+  height: auto;
+  display: flex;
   height: 100%;
+  background-image: url("<%= asset_path 'background.jpg' %>");
+  background-position: center center;
+  background-attachment: fixed;
 
   h1 {
     color: white;
+    font-weight: 200;
   }
 }
 
@@ -108,12 +109,6 @@ footer li * {
 
 .material-icons {
   vertical-align: middle;
-}
-
-#index-banner {
-  background-image: url("<%= asset_path 'background.jpg' %>");
-  background-position: center center;
-  background-attachment: fixed;
 }
 
 // media queries
