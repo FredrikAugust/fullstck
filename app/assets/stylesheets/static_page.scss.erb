@@ -14,7 +14,7 @@ p {
   line-height: 2rem;
 }
 
-.parallax-container {
+#index-banner {
   line-height: 0;
   height: auto;
   display: flex;
@@ -85,13 +85,6 @@ footer.page-footer {
   background-color: $main-color;
 }
 
-.half-parallax {
-  // need these stupid overrides because it won't override by default #css
-  height: 190px;
-  min-height: 190px;
-  max-height: 190px;
-}
-
 .navbar-fixed {
   position:fixed;
 }
@@ -117,6 +110,12 @@ footer li * {
   vertical-align: middle;
 }
 
+#index-banner {
+  background-image: url("<%= asset_path 'background.jpg' %>");
+  background-position: center center;
+  background-attachment: fixed;
+}
+
 // media queries
 @media (max-width: 600px) {
   .sixty-percent-text {
@@ -125,14 +124,6 @@ footer li * {
   form button {
     display: block !important;
     margin: auto;
-  }
-  .parallax {
-    display: none;
-  }
-  #index-banner {
-    background-image: url("<%= asset_path 'background.jpg' %>");
-    background-position: center center;
-    background-attachment: fixed;
   }
   h1.header.center {
     font-size: 2em;
