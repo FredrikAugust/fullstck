@@ -5,11 +5,6 @@ body, html {
   height: 100%;
 }
 
-.inner-body {
-  height: 100%;
-  overflow-x: hidden;
-}
-
 p {
   line-height: 2rem;
 }
@@ -90,11 +85,6 @@ footer.page-footer {
   position:fixed;
 }
 
-.carousel .card-panel {
-  padding: 5px;
-  background-color: $main-color;
-}
-
 .main-color {
   background-color: $main-color;
 }
@@ -121,22 +111,15 @@ footer li * {
     margin: auto;
   }
   h1.header.center {
-    font-size: 2em;
+    font-size: 3em;
+  }
+  #index-banner {
+    background-position: 100px;
   }
 }
 
 @media (min-width: 992px) {
   form {
     margin-top: 2rem;
-  }
-}
-
-@media (max-width: 425px) {
-  .indicators {
-    display: none;
-  }
-
-  .with-indicators {
-    bottom: 20px !important;
   }
 }

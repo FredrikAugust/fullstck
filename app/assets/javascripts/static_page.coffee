@@ -1,31 +1,12 @@
 $(document).on 'turbolinks:load', ->
-  $('.inner-body').on 'scroll', (e) ->
+  $(window).on 'scroll', (e) ->
     # when the top of the window is at the same place as the top of the second nav
-    if $('#navsep').offset().top <= 0
+    if $(window).scrollTop() >= $('#navsep').offset().top
       # add original background-color and box-shadow
       $('#navigation').removeClass('trans-nav').addClass('vis-nav')
     else
       # remove background-color and box-shadow
       $('#navigation').removeClass('vis-nav').addClass('trans-nav')
-
-  $('.slick').slick({
-    dots: false,
-    fade: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    asNavFor: '.slick-nav'
-  })
-
-  $('.slick-nav').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.slick',
-    dots: true,
-    centerMode: true,
-    focusOnSelect: true
-  })
-
-  $('.parallax').parallax()
 
   # enable the side navigation-menu on mobile
   $('.button-collapse').sideNav
@@ -38,7 +19,7 @@ $(document).on 'turbolinks:load', ->
     # get href from the link clicked
     $target = $($(this).attr('href'))
 
-    $('.inner-body').stop().animate {
+    $('body').stop().animate {
       'scrollTop': Math.abs($('#index-banner').offset().top) +
         $target.position().top -
         $('#navigation').height() + 1
