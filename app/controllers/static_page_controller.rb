@@ -14,8 +14,4 @@ class StaticPageController < ApplicationController
                                      'We will respond shortly')
     end
   end
-
-  def acme
-    render text: '_jVzEyVkoPA_3T3_GM1N5yOvS7kvEryojf8za1EimCs.2-E9DzzYma7wPTE0h0Brc5A8hj4wXic-n7sgJg6Tv_w'
-  end
 end
