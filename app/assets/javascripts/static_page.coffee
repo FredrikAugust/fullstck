@@ -19,7 +19,7 @@ $(document).on 'turbolinks:load', ->
     # get href from the link clicked
     $target = $($(this).attr('href'))
 
-    $('body').stop().animate {
+    $('body,html').stop().animate {
       'scrollTop': Math.abs($('#index-banner').offset().top) +
         $target.position().top -
         $('#navigation').height() + 1
