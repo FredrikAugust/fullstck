@@ -16,6 +16,6 @@ class StaticPageController < ApplicationController
   end
 
   def acme
-    render plain: "cAu4wT7MBOr1aP9Uvgm6dd60tNJ4Ksa0GEvyn01oMEc.HPwFgKcETpKCbPfWZdosHOccGn-chMYAncgS_s2NKJk"
+    render plain: "xXBg7jASuDZGWsMHxgNRQeL1tZZojJi9Jg7QKlJtyrw.yP5gOiIvZLVCU-puVGzZ4XB0iffrBLE97ME_zAn9uYU"
   end
 end
